@@ -1,0 +1,142 @@
+<head>
+    <title>article 2 test</title>
+    <cover src="./cover.png" />
+    <date day=17 month=12 year=2023 />
+    <author>Matthew Aleshechkin</author>
+</head>
+
+
+<body>
+    Vivamus id laoreet dui, sagittis vulputate risus. Integer pellentesque sit amet tellus a facilisis. Proin in risus
+    volutpat, volutpat libero ut, blandit leo. Nulla tincidunt est in euismod porttitor. Vivamus sem magna, dapibus
+    vitae aliquet ac, mattis convallis nunc. Suspendisse quis pulvinar tellus, tincidunt porta ante. Integer orci
+    sapien, euismod eu volutpat id, hendrerit at turpis. <code class="python">print(1,2,3)</code>
+    Curabitur imperdiet lacus eros, porttitor maximus augue vehicula at. Vivamus non porttitor lectus. Morbi elit
+    libero, varius
+    nec porttitor vel, consectetur lacinia diam. Maecenas dapibus non nulla ut interdum. Duis mollis arcu nisi, nec
+    vehicula ipsum convallis vel. Quisque rutrum sed sapien ac ornare.
+    <h1>Header Example</h1>
+    <h2>Header Example</h2>
+    <h3>Header Example</h3>
+    <h4>Header Example</h4>
+    <h5>Header Example</h5>
+    <h6>Header Example</h6>
+    <img img-src="cover.png"></img>
+    \n
+    <code block class="python">
+for file in main.iterdir():
+    soup = BeautifulSoup((file / "main.html").read_text(), "html.parser")
+    date = soup.find(name="head").find("date").attrs
+
+    body = soup.find(name="body")
+    body_new = ""
+
+    bodytemp = body.decode_contents().split("\\n")
+    body = []
+    for x in bodytemp:
+        body += x.split("\n\n")
+    for line in body:
+        line = line.strip()
+        if (line == ""):
+            continue
+        linesoup = BeautifulSoup(line, "html.parser")
+        lineparsed = ""
+        hasText = False
+        for child in linesoup.contents:
+            if isinstance(child, str):
+                hasText = True
+                lineparsed += str(child).strip()
+            elif isinstance(child, Tag):
+                lineparsed += str(child)
+        print(line, hasText)
+        if (hasText):
+            temp = lineparsed.strip().replace('\n', '').replace('\r', '')
+            body_new = body_new + f"<p>{temp}</p>"
+        else:
+            body_new = body_new + lineparsed.strip().replace("\n",
+                                                            "").replace("\r", "")
+    </code>
+
+    <code block class="python">import asd from fwe
+print("asdasd")
+for x in range(123):
+    print(x)</code>
+
+    Nam sapien enim, placerat eget blandit et, ultricies in erat. Phasellus metus lacus, lobortis in eros id, ornare
+    viverra justo. Nam euismod erat sed ante varius, non ultrices ipsum iaculis. Integer eget risus mauris. Nam bibendum
+    ex ut diam egestas, sed cursus mauris ultricies. Suspendisse potenti. Aenean suscipit auctor condimentum. Integer id
+    luctus magna. Curabitur in lacus quam. Etiam est arcu, viverra sit amet blandit ut, scelerisque id diam. Vestibulum
+    imperdiet sit amet felis nec aliquam. Suspendisse sit amet tincidunt eros. Phasellus hendrerit, ex non cursus
+    venenatis, sapien quam dignissim nisl, nec semper lacus ante eget diam. Nam commodo dui vitae ex tincidunt sagittis.
+
+    In bibendum tellus ante, at facilisis neque porttitor sed. Ut ornare urna nec consequat eleifend. Pellentesque eget
+    ante vel mauris lobortis pharetra porta quis purus. Proin feugiat velit vel sagittis vestibulum. Quisque porttitor
+    lorem eu malesuada fringilla. Suspendisse vitae orci tincidunt, sodales velit eget, aliquam magna. Aenean dapibus
+    justo vel mollis vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean imperdiet magna
+    dui, eu volutpat lacus ullamcorper sed.
+
+    Duis condimentum scelerisque sapien in laoreet. Aliquam feugiat, enim ut malesuada aliquet, libero est consequat
+    diam, tincidunt luctus nisi nisi id urna. In efficitur aliquet est vitae ultricies. Aenean lobortis nisi sed ipsum
+    egestas porttitor. Vivamus pellentesque rutrum ex. Integer at augue quis justo auctor blandit in at orci.
+    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent sit amet sem
+    eu purus eleifend egestas convallis mollis mauris. Vestibulum non sapien porta, mattis turpis tristique, malesuada
+    diam. Praesent pharetra nisi quis nisl tempus dictum. Quisque ut nulla et felis molestie aliquet et at ipsum. In
+    nisi ipsum, suscipit eget porta at, lobortis at nisl.
+
+    Pellentesque rutrum nunc quis nisl ultrices ullamcorper. Vivamus accumsan dolor eget urna fermentum elementum.
+    Nullam lacinia, enim id sodales aliquam, ex erat congue urna, id dictum nibh nisl in nisi. Sed est ligula, tristique
+    a tincidunt ac, rhoncus quis ligula. Mauris odio quam, faucibus eu sagittis sed, gravida at libero. Aenean faucibus,
+    orci in faucibus lobortis, mi ligula blandit massa, vel feugiat velit elit sit amet massa. Suspendisse non lectus
+    tincidunt, auctor justo vitae, fermentum mi.
+
+    Quisque metus nisl, iaculis in lorem et, vulputate sodales lectus. Vestibulum quis bibendum sapien, quis dapibus
+    justo. Suspendisse aliquet hendrerit metus, sit amet finibus nibh gravida sed. Duis congue ornare nisl, ut interdum
+    justo porta eu. In feugiat aliquam massa eu lacinia. Morbi maximus sodales orci, non semper orci hendrerit sed.
+    Etiam eleifend velit quis justo mattis, sit amet ullamcorper est tempor. Donec placerat turpis in condimentum
+    aliquam. Morbi id arcu tincidunt, aliquet nibh id, tempus enim.
+
+    Curabitur vehicula elit eget semper consectetur. Integer tristique magna vitae arcu aliquam scelerisque sit amet
+    eget tortor. Phasellus ut nulla a lectus mattis commodo. Quisque lacus est, ultrices ut tortor non, dapibus faucibus
+    ipsum. Maecenas molestie, orci maximus cursus accumsan, neque sapien varius ipsum, eget hendrerit nibh risus eget
+    quam. Fusce eget aliquam turpis, vel ornare diam. Suspendisse et quam at quam aliquet dignissim vitae vitae tortor.
+    Morbi id magna tempus, egestas ex sit amet, dignissim nisl. Nam interdum diam vitae scelerisque pharetra. Nunc quis
+    augue id neque dignissim facilisis. Praesent mattis ultrices elit quis sodales. Nunc vitae tempus libero. Aenean
+    pulvinar orci turpis, dignissim rhoncus nulla suscipit sit amet. Proin mattis mollis mauris, vitae tempus ligula
+    egestas finibus. In hac habitasse platea dictumst.
+
+    Proin fringilla risus nulla, eu scelerisque mi porttitor vitae. Curabitur posuere aliquam sem in posuere. Duis nec
+    massa nec justo sollicitudin elementum. Sed vestibulum auctor mi, vitae congue libero dictum vitae. Praesent auctor
+    ac magna vitae semper. Suspendisse lectus nisl, dapibus id nisl id, dapibus aliquam dui. Nulla risus erat, egestas
+    eget ante dignissim, convallis elementum neque. Curabitur porta at ex ut iaculis. Vestibulum dignissim tortor vitae
+    vehicula aliquam. Ut scelerisque ligula enim, vitae luctus orci rhoncus eu. Aliquam in vehicula urna. Pellentesque
+    scelerisque, erat id sollicitudin euismod, nibh dui porta orci, id mollis urna urna eget ligula. Sed tortor turpis,
+    accumsan eget augue vel, tempus tristique purus. Vivamus nec condimentum felis. Nulla eu tristique nulla. Vestibulum
+    et dui odio.
+
+    Sed eleifend leo at congue iaculis. Sed blandit, nisl sed eleifend semper, arcu ligula semper dui, a ornare dolor
+    risus ac lorem. Proin posuere elit id justo pulvinar fringilla. Sed eu hendrerit leo. Suspendisse sed odio
+    scelerisque, egestas est in, vulputate orci. Quisque sodales eros nibh, vel elementum enim laoreet at. Etiam
+    elementum pharetra gravida. Nunc sed magna eros. Sed ullamcorper congue cursus. Ut vel dapibus leo. Morbi lobortis,
+    mauris sed bibendum pretium, mi lorem egestas nulla, non mollis lorem risus a dolor. Nulla facilisi.
+
+    Sed faucibus arcu elementum eros dapibus sagittis. Integer dui diam, maximus vitae urna eu, tempus commodo leo.
+    Pellentesque at blandit lectus, non sagittis sem. Integer scelerisque magna nibh, ac placerat libero vehicula sit
+    amet. Curabitur aliquam condimentum ligula, vitae volutpat ex finibus non. Curabitur rutrum augue a ante rhoncus,
+    sit amet dictum urna maximus. Donec scelerisque hendrerit lectus, et maximus libero ornare nec. Ut mollis neque
+    justo, vitae interdum felis hendrerit vel. Nullam imperdiet velit turpis, at commodo ipsum euismod a. Morbi id
+    blandit nisl, ac varius dui. Nulla et rhoncus risus. Ut velit tellus, blandit vel dictum quis, consequat a turpis.
+
+    Donec pulvinar ligula non dolor gravida, nec hendrerit purus ornare. Ut at condimentum ex. Nulla ultrices vitae ex
+    sed hendrerit. Vestibulum nec pharetra mi. In a risus porta dui rhoncus bibendum in vitae turpis. Aliquam faucibus
+    venenatis ultricies. Nullam cursus lacinia laoreet. Phasellus ut massa tortor. Nunc ornare efficitur felis, quis
+    laoreet libero mollis id. Nunc hendrerit bibendum nibh ut facilisis. Quisque ornare blandit felis et pharetra.
+    Aliquam id pharetra quam.
+
+    In a nibh quis mi placerat bibendum ut eu lectus. Maecenas volutpat ex bibendum, eleifend nunc ut, sagittis leo.
+    Suspendisse id ex molestie, maximus sapien nec, dictum nisl. Praesent ut enim sit amet nibh pretium vulputate at nec
+    nisl. Nulla efficitur risus eu nisi faucibus, vel condimentum purus consequat. Pellentesque at massa erat. Phasellus
+    imperdiet finibus placerat. Etiam molestie facilisis dapibus. Duis eleifend tortor et est euismod, mollis aliquam
+    nulla varius. Etiam et mattis quam, in bibendum tortor. Cras malesuada semper massa, quis vulputate eros tristique
+    quis. Sed dignissim, orci ac dignissim pharetra, neque nulla egestas velit, ac tincidunt massa lacus et ante. In
+    ultricies suscipit tellus eu fringilla.
+</body>
